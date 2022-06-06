@@ -1,6 +1,6 @@
 package ru.dust.codewars.kyu7
 
-import ru.dust.codewars.support.int.IntGenerator
+import ru.dust.codewars.support.int.NumGenerator
 import ru.dust.codewars.support.time.StopWatch
 
 import scala.collection.mutable
@@ -35,17 +35,17 @@ object EvenSizeArrayElementsPairMinSum {
 
     println(" 1")
     stopWatch.changeStartTime
-    minSum(IntGenerator.genIntArrayFromRange(1, stringCount).toList)
+    minSum(NumGenerator.genIntArrayFromRange(1, stringCount).toList)
     println(s" 1 $stringCount strings duration in sec: ${stopWatch.getDurationSec}")
 
     println(" 2")
     stopWatch.changeStartTime
-    minSum2(IntGenerator.genIntArrayFromRange(1, stringCount).toList)
+    minSum2(NumGenerator.genIntArrayFromRange(1, stringCount).toList)
     println(s" 2 $stringCount strings duration in sec: ${stopWatch.getDurationSec}")
 
     println(" 3")
     stopWatch.changeStartTime
-    minSum3(IntGenerator.genIntArrayFromRange(1, stringCount).toList)
+    minSum3(NumGenerator.genIntArrayFromRange(1, stringCount).toList)
     println(s" 3 $stringCount strings duration in sec: ${stopWatch.getDurationSec}")
   }
 

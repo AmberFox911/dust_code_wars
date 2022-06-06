@@ -1,6 +1,6 @@
 package ru.dust.codewars.kyu8
 
-import ru.dust.codewars.support.int.IntGenerator
+import ru.dust.codewars.support.int.NumGenerator
 import ru.dust.codewars.support.time.StopWatch
 
 object CountPositivesSumNegatives {
@@ -12,27 +12,27 @@ object CountPositivesSumNegatives {
 
     println(" 1")
     stopWatch.changeStartTime
-    countPositivesSumNegatives(IntGenerator.genIntArray(intCount))
+    countPositivesSumNegatives(NumGenerator.genIntArray(intCount))
     println(s" 1 $intCount ints duration in sec: ${stopWatch.getDurationSec}")
 
     println(" 2")
     stopWatch.changeStartTime
-    countPositivesSumNegatives2(IntGenerator.genIntArray(intCount))
+    countPositivesSumNegatives2(NumGenerator.genIntArray(intCount))
     println(s" 2 $intCount ints duration in sec: ${stopWatch.getDurationSec}")
 
     println("3")
     stopWatch.changeStartTime
-    countPositivesSumNegatives3(IntGenerator.genIntArray(intCount))
+    countPositivesSumNegatives3(NumGenerator.genIntArray(intCount))
     println(s" 3 $intCount ints duration in sec: ${stopWatch.getDurationSec}")
 
     println("4")
     stopWatch.changeStartTime
-    countPositivesSumNegatives4(IntGenerator.genIntArray(intCount))
+    countPositivesSumNegatives4(NumGenerator.genIntArray(intCount))
     println(s" 4 $intCount ints duration in sec: ${stopWatch.getDurationSec}")
 
     println("5")
     stopWatch.changeStartTime
-    countPositivesSumNegatives5(IntGenerator.genIntArray(intCount))
+    countPositivesSumNegatives5(NumGenerator.genIntArray(intCount))
     println(s" 5 $intCount ints duration in sec: ${stopWatch.getDurationSec}")
   }
 
