@@ -42,7 +42,7 @@ object BuyCar {
 
   def main(args: Array[String]): Unit = {
     println(nbMonths(12000, 8000, 1000, 1.5).mkString(" ,")) // should return [0, 4000]
-        println(nbMonths(2000, 8000, 1000, 1.5).mkString(" ,")) // should return [6, 766]
+    println(nbMonths(2000, 8000, 1000, 1.5).mkString(" ,")) // should return [6, 766]
     println(nbMonths(8000, 8000, 1000, 1.5).mkString(" ,"))  // should return [0, 0]
     println(nbMonths(8000, 12000, 500, 1).mkString(" ,"))  // should return [8, 597]
 

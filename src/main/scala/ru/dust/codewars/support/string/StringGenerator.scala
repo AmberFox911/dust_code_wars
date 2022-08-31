@@ -18,7 +18,7 @@ object StringGenerator {
   }
 
   def genStringArray(arraySize: Int, stringSizeBorder: Int = 10): Array[String] = {
-    new Array[String](arraySize).map(el => genRandomNextString(Random.nextInt(stringSizeBorder)))
+    new Array[String](arraySize).map(el => genRandomNextString(Random.between(1, stringSizeBorder)))
   }
 
 }
