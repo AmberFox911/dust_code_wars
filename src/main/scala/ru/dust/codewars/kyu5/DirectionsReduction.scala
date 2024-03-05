@@ -31,11 +31,25 @@ if you want to translate, please ask before translating.*/
 object DirectionsReduction {
 
   def main(args: Array[String]): Unit = {
-
+    println(dirReduc(Array("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST")).mkString(" ")) // WEST
+    println(dirReduc(Array("NORTH", "WEST", "SOUTH", "EAST")).mkString(" ")) // NORTH WEST SOUTH EAST
+    println(dirReduc(Array("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "NORTH")).mkString(" ")) // NORTH
+    println(dirReduc(Array("WEST", "EAST", "NORTH", "SOUTH", "EAST", "SOUTH", "NORTH", "NORTH", "SOUTH", "WEST", "SOUTH", "SOUTH", "EAST", "EAST")).mkString(" ")) // SOUTH, SOUTH, EAST, EAST)
+    println(dirReduc(Array("WEST", "WEST", "EAST", "EAST", "WEST", "SOUTH", "NORTH", "SOUTH")).mkString(" ")) //  (WEST, SOUTH)
   }
 
   def dirReduc(arr: Array[String]): Array[String] = {
-    Array()
+    var deleteIndexes: Array[Int] = Array()
+    def appendIfDeletePath(ind1: Int, ind2: Int): Unit = {
+      if (ind1 < 0 || ind2 > arr.length - 1 || deleteIndexes.contains(ind1) || deleteIndexes.contains(ind2)) return
+      val paths = Seq(arr(ind1), arr(ind2))
+      val isDelete: Boolean = (paths.contains("WEST") && paths.contains("EAST")) || (paths.contains("NORTH") && paths.contains("SOUTH"))
+      if (isDelete) deleteIndexes = deleteIndexes ++ Array(ind1, ind2)
+    }
+    val indexes = arr.indices
+    indexes.foreach(ind => appendIfDeletePath(ind, ind+1))
+    val res = indexes.filterNot(deleteIndexes.contains).map(arr(_)).toArray
+    if (deleteIndexes.isEmpty) res else dirReduc(res)
   }
 
 }
